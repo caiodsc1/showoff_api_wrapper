@@ -1,24 +1,39 @@
-# README
+## Showoff
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[https:/showoff-tech-test-1.herokuapp.com](https://showoff-tech-test-1.herokuapp.com)
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+**Dependencies**: Before installation make sure you have Ruby (2.5.1) and Rails (5.2.3) installed. 
 
-* System dependencies
+1. Clone the Project
 
-* Configuration
+	~~~ sh
+	git clone https://github.com/caiodsc/project.git
+	~~~
 
-* Database creation
+2. Bundle
 
-* Database initialization
+	~~~ sh
+	bundle install
+	~~~
 
-* How to run the test suite
+3. Fill the .env with your credentials
 
-* Services (job queues, cache servers, search engines, etc.)
+4. Start the Application
 
-* Deployment instructions
+	~~~ sh
+	rails s
+	~~~
 
-* ...
+
+## Testing with RSpec
+
+The project was built with TDD (Test Driven Development) and has a Full Test Suite. To execute the tests just run the tests with RSpec.
+The project also uses VCR to record test suite's HTTP interactions.
+
+1. Run tests
+
+    ~~~ sh
+    rspec
+    ~~~
