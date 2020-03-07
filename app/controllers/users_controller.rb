@@ -92,7 +92,11 @@ class UsersController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    @user = User.new(user_params)
+    @user = begin
+              User.new(user_params)
+            rescue StandardError
+              User.new
+            end
   end
 
   def set_token

@@ -41,7 +41,11 @@ class AuthsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_auth
-    @auth = AuthService.new(auth_params)
+    @auth = begin
+              AuthService.new(auth_params)
+            rescue StandardError
+              AuthService.new
+            end
   end
 
   # Only allow a list of trusted parameters through.

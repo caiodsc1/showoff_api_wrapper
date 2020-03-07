@@ -56,7 +56,11 @@ class WidgetsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_widget
-    @widget = Widget.new(widget_params)
+    @widget = begin
+                Widget.new(widget_params)
+              rescue StandardError
+                Widget.new
+              end
   end
 
   def set_user_token
