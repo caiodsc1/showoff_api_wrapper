@@ -29,11 +29,11 @@
 
 ## Testing with RSpec
 
-The project was built with TDD (Test Driven Development) and has a Full Test Suite. To execute the tests just run the tests with RSpec.
-The project also uses VCR to record test suite's HTTP interactions.
+The project was built with **TDD (Test Driven Development)** and has a Full Test Suite. To execute the tests just run the tests with RSpec.
+The project also uses **VCR** to record test suite's HTTP interactions.
 
 1. Run tests
 
     ~~~ sh
-    rspec
+    bundle exec rspec
     ~~~
