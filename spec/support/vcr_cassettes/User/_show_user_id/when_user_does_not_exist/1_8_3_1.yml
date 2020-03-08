@@ -29,7 +29,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 07 Mar 2020 08:15:53 GMT
+      - Sun, 08 Mar 2020 15:49:55 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -50,9 +50,9 @@ http_interactions:
       Vary:
       - Accept-Encoding, Origin
       X-Request-Id:
-      - 2b245ba9-0604-473f-a11d-741fdf9870ac
+      - 40659b68-81c9-452f-8fd3-332ff3d21fbd
       X-Runtime:
-      - '0.009565'
+      - '0.006950'
       Transfer-Encoding:
       - chunked
       Via:
@@ -62,5 +62,5 @@ http_interactions:
       string: '{"code":10,"message":"Your session has expired. Please login again
         to continue.","data":null}'
     http_version: null
-  recorded_at: Sat, 07 Mar 2020 08:15:53 GMT
+  recorded_at: Sun, 08 Mar 2020 15:49:55 GMT
 recorded_with: VCR 5.1.0

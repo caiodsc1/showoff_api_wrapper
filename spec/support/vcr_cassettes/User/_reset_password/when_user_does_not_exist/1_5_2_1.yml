@@ -5,7 +5,7 @@ http_interactions:
     uri: https://showoff-rails-react-production.herokuapp.com/api/v1/users/reset_password
     body:
       encoding: UTF-8
-      string: '{"user":{"email":"0ab6b8c2a3363597a828da2bf316535d@showoff.ie"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+      string: '{"user":{"email":"6b73d39d48233b0e612843f69790ce3f@showoff.ie"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
     headers:
       Accept:
       - "*/*"
@@ -27,7 +27,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 07 Mar 2020 08:15:21 GMT
+      - Sun, 08 Mar 2020 15:49:16 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -43,17 +43,17 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - dcc91443-dcce-4f35-83d1-7a330ede524e
+      - 90e22ef6-bb67-4faa-bc45-c4b928c14df4
       X-Runtime:
-      - '0.012555'
+      - '0.011152'
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"code":3,"message":"0ab6b8c2a3363597a828da2bf316535d@showoff.ie is
+      string: '{"code":3,"message":"6b73d39d48233b0e612843f69790ce3f@showoff.ie is
         an invalid email address","data":null}'
     http_version: null
-  recorded_at: Sat, 07 Mar 2020 08:15:21 GMT
+  recorded_at: Sun, 08 Mar 2020 15:49:17 GMT
 recorded_with: VCR 5.1.0

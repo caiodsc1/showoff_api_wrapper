@@ -27,14 +27,11 @@ RSpec.describe User, type: :model do
     it { is_expected.to respond_to(:change_password) }
     it { is_expected.to respond_to(:show_logged_in_user) }
     it { is_expected.to respond_to(:show_user_id) }
-
     it { is_expected.to respond_to(:get_private_widgets) }
     it { is_expected.to respond_to(:get_widgets_by_user_id) }
-
     it { is_expected.to respond_to(:authenticate) }
     it { is_expected.to respond_to(:token_refresh) }
     it { is_expected.to respond_to(:token_revoke) }
-
     it { is_expected.to respond_to(:errors) }
   end
 
@@ -63,7 +60,7 @@ RSpec.describe User, type: :model do
       end
 
       context 'user is not authenticated' do
-        before { user.token = nil }
+        before { user.token_revoke }
 
         it { is_expected.to eq false }
       end
@@ -126,7 +123,7 @@ RSpec.describe User, type: :model do
     end
 
     context 'when user is not authenticated' do
-      before { user.token = nil }
+      before { user.token_revoke }
 
       it { is_expected.to eq false }
     end
@@ -140,7 +137,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to eq true }
 
     context 'when user is not logged in' do
-      before { user.token = nil }
+      before { user.token_revoke }
 
       it { is_expected.to eq false }
     end
@@ -160,7 +157,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to eq true }
 
     context 'when user is not logged in' do
-      before { user.token = nil }
+      before { user.token_revoke }
 
       it { is_expected.to eq false }
     end
@@ -187,7 +184,7 @@ RSpec.describe User, type: :model do
     end
 
     context 'when user is not authenticated' do
-      before { user.token = nil }
+      before { user.token_revoke }
 
       it { is_expected.to eq false }
     end
@@ -213,7 +210,7 @@ RSpec.describe User, type: :model do
     end
 
     context 'when user is not authenticated' do
-      before { user.token = nil }
+      before { user.token_revoke }
 
       it { is_expected.to eq true }
       it 'shows only visible widgets' do
