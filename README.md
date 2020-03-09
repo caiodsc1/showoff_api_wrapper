@@ -40,3 +40,7 @@ The project also uses [VCR](https://github.com/vcr/vcr) to record test suite's H
     ~~~ sh
     bundle exec rspec
     ~~~
+
+## Running multiple environments
+
+The project was build using the gem [dotenv](https://github.com/bkeepers/dotenv). In order to run multiple environments as test, development and production, it's necessary to create the related files: **.env.test**, **.env.development**, **.env.production**. [Read more](https://github.com/bkeepers/dotenv#what-other-env-files-can-i-use).
