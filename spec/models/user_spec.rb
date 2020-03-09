@@ -43,6 +43,7 @@ RSpec.describe User, type: :model do
 
       it { is_expected.to eq true }
     end
+
     context 'when is existent record' do
       subject { user.save }
 
@@ -57,8 +58,10 @@ RSpec.describe User, type: :model do
 
       it 'updates the user' do
         user.save
-        expect(user.response.dig('data', 'user', 'first_name')).to eq 'Name'
-        expect(user.response.dig('data', 'user', 'last_name')).to eq 'Surname'
+        user.reload
+
+        expect(user.first_name).to eq 'Name'
+        expect(user.last_name).to eq 'Surname'
       end
 
       context 'user is not authenticated' do
@@ -119,8 +122,11 @@ RSpec.describe User, type: :model do
     it { is_expected.to eq true }
     it 'updates user password' do
       user.change_password
+
       expect(user.authenticate).to eq false
+
       user.password = user.new_password
+
       expect(user.authenticate).to eq true
     end
 

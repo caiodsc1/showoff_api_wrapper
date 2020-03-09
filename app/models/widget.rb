@@ -36,4 +36,10 @@ class Widget < ApplicationModel
     success, self.response = WidgetService.visible_widgets(search_term)
     success
   end
+
+  def reload
+    response.dig('data', 'widget')&.each do |attr, value|
+      try("#{attr}=", value)
+    end
+  end
 end

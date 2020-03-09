@@ -51,9 +51,10 @@ RSpec.describe Widget, type: :model do
       it { is_expected.to eq true }
       it 'updates widget fields' do
         widget.save
+        widget.reload
 
-        expect(widget.response.dig('data', 'widget', 'name')).to eq 'Widget'
-        expect(widget.response.dig('data', 'widget', 'description')).to eq 'Description'
+        expect(widget.name).to eq 'Widget'
+        expect(widget.description).to eq 'Description'
       end
 
       context 'when token is revoked' do
