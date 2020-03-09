@@ -1,5 +1,3 @@
-require 'user/image.rb'
-
 module UserAttachable
   extend ActiveSupport::Concern
 
