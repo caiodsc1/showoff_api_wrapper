@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Description</th>
+    <th scope="col">Kind</th>
+    <th scope="col">User ID</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @widgets.each do |widget| %>
+    <tr>
+      <th scope="row"><%= widget.id %></th>
+      <td><%= widget.name.truncate(20) %></td>
+      <td><%= widget.description.truncate(50) %></td>
+      <td><span class="<%= badge_class(widget.kind) %>"><%= widget.kind.capitalize %></span></td>
+      <td><%= link_to widget.user.id, by_id_users_path(widget.user.id) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

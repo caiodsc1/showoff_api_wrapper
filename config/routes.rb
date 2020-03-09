@@ -3,13 +3,15 @@ Rails.application.routes.draw do
 
   resources 'users', only: ['create', 'update'] do
     collection do
-      get '/me', action: 'show_logged_in_user'
+      get '/me', action: 'show_authenticated_user'
       get '/check_email', action: 'check_email'
-      post '/reset_password', action: 'reset_password'
+      get '/reset_password', action: 'reset_password'
       post '/change_password', action: 'change_password'
-      get '/me/widgets', action: 'get_private_widgets'
-      get '/:id', action: 'show_user_id'
-      get '/:id/widgets', action: 'get_widgets_by_user_id'
+      get '/me/widgets', action: 'private_widgets', as: 'my_widgets'
+      post '/sign_in', action: 'sign_in'
+      get '/sign_out', action: 'sign_out'
+      get '/:id', action: 'show_user_by_id', as: 'by_id'
+      get '/:id/widgets', action: 'widgets_by_user_id'
     end
   end
 
@@ -22,4 +24,6 @@ Rails.application.routes.draw do
     post '/refresh', action: 'refresh'
     post '/revoke', action: 'revoke'
   end
+
+  root 'widgets#visible'
 end

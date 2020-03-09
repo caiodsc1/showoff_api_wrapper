@@ -1,6 +1,6 @@
 class WidgetService
   @@create_attributes = %w[name description kind].freeze
-  @@update_attributes = %w[name description].freeze
+  @@update_attributes = %w[name description kind].freeze
 
   def self.create_widget(widget)
     ApiService.call(method: :post, url: '/widgets',
@@ -19,12 +19,12 @@ class WidgetService
                     headers: { authorization: "Bearer #{widget.token}" })
   end
 
-  def self.get_public_widgets(widget)
+  def self.public_widgets(widget)
     ApiService.call(method: :get, url: '/widgets',
                     headers: { authorization: "Bearer #{widget.token}" })
   end
 
-  def self.get_visible_widgets(search_term = nil)
+  def self.visible_widgets(search_term = nil)
     ApiService.call(method: :get, url: '/widgets/visible',
                     params: { term: search_term }.compact)
   end

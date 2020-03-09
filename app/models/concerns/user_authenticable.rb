@@ -4,15 +4,15 @@ module UserAuthenticable
   extend ActiveSupport::Concern
 
   included do
-    attr_accessor :password, :token, :refresh_token
-    # current -> :email, :first_name, :last_name, :password, :current_password, :new_password, :date_of_birth, :image_url, :new_record, :token, :response
-
-    alias username email
+    attr_accessor :email, :password, :token, :refresh_token
   end
 
   def authenticate
-    auth = AuthService.new(username: username, password: password)
+    auth = AuthService.new(username: email, password: password)
     success = auth.create
+
+    self.response = auth.response
+
     if success
       self.token = auth.response.dig('data', 'token', 'access_token')
       self.refresh_token = auth.response.dig('data', 'token', 'refresh_token')
@@ -25,6 +25,9 @@ module UserAuthenticable
   def token_refresh
     auth = AuthService.new(token: token, refresh_token: refresh_token)
     success = auth.refresh
+
+    self.response = auth.response
+
     if success
       self.token = auth.response.dig('data', 'token', 'access_token')
       self.refresh_token = auth.response.dig('data', 'token', 'refresh_token')
@@ -35,7 +38,20 @@ module UserAuthenticable
   end
 
   def token_revoke
-    success, self.response = AuthService.new(token: token).revoke
+    auth = AuthService.new(token: token)
+    success = auth.revoke
+
+    self.response = auth.response
+
     success
+  end
+
+  def to_auth_params
+    {
+        username: email,
+        password: password,
+        token: token,
+        refresh_token: refresh_token
+    }
   end
 end

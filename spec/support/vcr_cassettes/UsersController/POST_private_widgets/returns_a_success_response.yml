@@ -1,0 +1,177 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/users
+    body:
+      encoding: UTF-8
+      string: '{"user":{"email":"d63a0969ee1686fa4870fa14f6320fd8@showoff.ie","password":"12345678","first_name":"Lavone","last_name":"Durgan","image_url":"https://static.thenounproject.com/png/961-200.png"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '355'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:14:03 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"fcc05761bd4e154f80ce0106a91155a4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e7b338cd-7c6e-4aa0-83f3-997512d63f6f
+      X-Runtime:
+      - '0.190927'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"user":{"id":3560,"name":"Lavone
+        Durgan","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg"},"first_name":"Lavone","last_name":"Durgan","date_of_birth":null,"email":"d63a0969ee1686fa4870fa14f6320fd8@showoff.ie","active":true},"token":{"access_token":"cebaaf5fec44f3cf652d82bdca4b3c2c07376329618901e4b20908b35453dab1","token_type":"Bearer","expires_in":2592000,"refresh_token":"7151c1642412c945a42948943f5bb223072c45c4e7d6f45caea499ae709239dc","scope":"basic","created_at":1583727244}}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:14:04 GMT
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"grant_type":"password","username":"d63a0969ee1686fa4870fa14f6320fd8@showoff.ie","password":"12345678","client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '266'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:14:05 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"c649344373dd329261c753c1c629a332"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b3666bbb-c005-48b8-9edf-855edd333789
+      X-Runtime:
+      - '0.179486'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"token":{"access_token":"6dd8451049601dbd62bf50af2e24d4a3d3a56e3ff768ee14aa2537ad33543752","token_type":"Bearer","expires_in":2592000,"refresh_token":"fc95cc509467872e276017b1c0f14a886eab90a3fb841b9613ed51ece651b177","scope":"basic","created_at":1583727245}}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:14:05 GMT
+- request:
+    method: get
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/users/me/widgets
+    body:
+      encoding: UTF-8
+      string: '{"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Authorization:
+      - Bearer 6dd8451049601dbd62bf50af2e24d4a3d3a56e3ff768ee14aa2537ad33543752
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '163'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:14:06 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"0ed3fd5498673a35e0421b4e4fd52814"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6223cbe5-4f77-4238-8dc6-35713e76cfd4
+      X-Runtime:
+      - '0.015731'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"widgets":[]}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:14:07 GMT
+recorded_with: VCR 5.1.0

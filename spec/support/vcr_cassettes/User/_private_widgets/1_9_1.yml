@@ -1,0 +1,303 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/users
+    body:
+      encoding: UTF-8
+      string: '{"user":{"email":"cad3dbef48828e67bbe71caa5084d11d@showoff.ie","password":"12345678","first_name":"Traci","last_name":"Hoppe","image_url":"https://static.thenounproject.com/png/961-200.png"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '353'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:16:11 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"123e2b41af90f3edb3292f9f1aecfb60"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - dda4e6d8-5a52-4abc-99aa-5a428393ba62
+      X-Runtime:
+      - '0.179118'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"user":{"id":3587,"name":"Traci
+        Hoppe","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg"},"first_name":"Traci","last_name":"Hoppe","date_of_birth":null,"email":"cad3dbef48828e67bbe71caa5084d11d@showoff.ie","active":true},"token":{"access_token":"d4e4ad99a550733ba16817643df2dfa7a9f865aa6876e0e659a192a12b652d8e","token_type":"Bearer","expires_in":2592000,"refresh_token":"c9b4df830a9c10272cd1da920da08af4482e5dc7346df22a6a1cd479986b873a","scope":"basic","created_at":1583727372}}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:16:12 GMT
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"grant_type":"password","username":"cad3dbef48828e67bbe71caa5084d11d@showoff.ie","password":"12345678","client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '266'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:16:12 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"efebdf123e7bbe21e24eefbe148f31ea"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 699a6040-86cd-46f7-87cd-a50f941a616d
+      X-Runtime:
+      - '0.181123'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"token":{"access_token":"4ce6a72f3da84321b4aa43ccd9d5a476c50e39e78379211ad34965d61b2a15f4","token_type":"Bearer","expires_in":2592000,"refresh_token":"4ead94f3675f0d894991dadc2cc1f8b4a5e4b20df561805105c5588699db45c2","scope":"basic","created_at":1583727373}}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:16:13 GMT
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/widgets
+    body:
+      encoding: UTF-8
+      string: '{"widget":{"name":"widget-7","description":"Quisquam in aut laboriosam
+        qui.","kind":"visible"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Authorization:
+      - Bearer 4ce6a72f3da84321b4aa43ccd9d5a476c50e39e78379211ad34965d61b2a15f4
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '257'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:16:14 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"f69e0295e7565f60c28d5574c724e95e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e9c7b16d-c890-4147-a690-c6acdd990060
+      X-Runtime:
+      - '0.031262'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"widget":{"id":1771,"name":"widget-7","description":"Quisquam
+        in aut laboriosam qui.","kind":"visible","user":{"id":3587,"name":"Traci Hoppe","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/587/small/961-200.png?1583727372","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/587/medium/961-200.png?1583727372","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/587/large/961-200.png?1583727372","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/587/original/961-200.png?1583727372"},"first_name":"Traci","last_name":"Hoppe","date_of_birth":null,"email":"cad3dbef48828e67bbe71caa5084d11d@showoff.ie","active":true},"owner":true}}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:16:14 GMT
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/widgets
+    body:
+      encoding: UTF-8
+      string: '{"widget":{"name":"widget-8","description":"Dolor error repellendus
+        voluptatem omnis voluptas iusto sint.","kind":"visible"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Authorization:
+      - Bearer 4ce6a72f3da84321b4aa43ccd9d5a476c50e39e78379211ad34965d61b2a15f4
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '287'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:16:15 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"3a98cd00bdf976e4c7d3f6b8882555dd"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c86a02fa-5c53-40fc-99f6-35167eafffe4
+      X-Runtime:
+      - '0.023992'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"widget":{"id":1772,"name":"widget-8","description":"Dolor
+        error repellendus voluptatem omnis voluptas iusto sint.","kind":"visible","user":{"id":3587,"name":"Traci
+        Hoppe","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/587/small/961-200.png?1583727372","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/587/medium/961-200.png?1583727372","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/587/large/961-200.png?1583727372","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/587/original/961-200.png?1583727372"},"first_name":"Traci","last_name":"Hoppe","date_of_birth":null,"email":"cad3dbef48828e67bbe71caa5084d11d@showoff.ie","active":true},"owner":true}}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:16:16 GMT
+- request:
+    method: get
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/users/me/widgets
+    body:
+      encoding: UTF-8
+      string: '{"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Authorization:
+      - Bearer 4ce6a72f3da84321b4aa43ccd9d5a476c50e39e78379211ad34965d61b2a15f4
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '163'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:16:16 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"5e47ab0b4588e7f5fa77fe7342e96580"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ded6771f-bfbf-4d89-ac1f-d43a459369d5
+      X-Runtime:
+      - '0.017586'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"widgets":[{"id":1772,"name":"widget-8","description":"Dolor
+        error repellendus voluptatem omnis voluptas iusto sint.","kind":"visible","user":{"id":3587,"name":"Traci
+        Hoppe","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/587/small/961-200.png?1583727372","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/587/medium/961-200.png?1583727372","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/587/large/961-200.png?1583727372","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/587/original/961-200.png?1583727372"},"first_name":"Traci","last_name":"Hoppe","date_of_birth":null,"email":"cad3dbef48828e67bbe71caa5084d11d@showoff.ie","active":true},"owner":true},{"id":1771,"name":"widget-7","description":"Quisquam
+        in aut laboriosam qui.","kind":"visible","user":{"id":3587,"name":"Traci Hoppe","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/587/small/961-200.png?1583727372","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/587/medium/961-200.png?1583727372","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/587/large/961-200.png?1583727372","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/587/original/961-200.png?1583727372"},"first_name":"Traci","last_name":"Hoppe","date_of_birth":null,"email":"cad3dbef48828e67bbe71caa5084d11d@showoff.ie","active":true},"owner":true}]}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:16:17 GMT
+recorded_with: VCR 5.1.0

@@ -33,15 +33,15 @@ class UserService
                     headers: { authorization: "Bearer #{user.token}" })
   end
 
-  def self.show_logged_in_user(user)
+  def self.show_authenticated_user(user)
     ApiService.call(method: :get, url: '/users/me', headers: { authorization: "Bearer #{user.token}" })
   end
 
-  def self.show_user_id(user)
+  def self.show_user_by_id(user)
     ApiService.call(method: :get, url: "/users/#{user.id}", headers: { authorization: "Bearer #{user.token}" })
   end
 
-  def self.get_private_widgets(user, search_term)
+  def self.private_widgets(user, search_term)
     ApiService.call(method: :get, url: '/users/me/widgets',
                     params: { term: search_term }.compact,
                     headers: { authorization: "Bearer #{user.token}" })

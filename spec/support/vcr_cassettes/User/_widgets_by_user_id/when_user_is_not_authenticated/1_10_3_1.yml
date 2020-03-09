@@ -1,0 +1,363 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/users
+    body:
+      encoding: UTF-8
+      string: '{"user":{"email":"0b2fa1ab1f38ffd1a8698ffee53c68d1@showoff.ie","password":"12345678","first_name":"Celesta","last_name":"Grant","image_url":"https://static.thenounproject.com/png/961-200.png"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '355'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:16:46 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"a24150b480101dc7b7ebd2bcadf24df4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 86efd31b-5d4f-4377-bc0c-7312e403e6a9
+      X-Runtime:
+      - '0.175976'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"user":{"id":3592,"name":"Celesta
+        Grant","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg"},"first_name":"Celesta","last_name":"Grant","date_of_birth":null,"email":"0b2fa1ab1f38ffd1a8698ffee53c68d1@showoff.ie","active":true},"token":{"access_token":"6096a6029b81fdaaa033b865c2053459abff5f2f9092c50227cb0bb8b4f1f965","token_type":"Bearer","expires_in":2592000,"refresh_token":"fd8f50556cc9dd1a7576567fa77fdc173b565b5a66040ce7fa1612f4a7e2e4cd","scope":"basic","created_at":1583727406}}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:16:46 GMT
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"grant_type":"password","username":"0b2fa1ab1f38ffd1a8698ffee53c68d1@showoff.ie","password":"12345678","client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '266'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:16:47 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"dab05b5273dd1fa57ce9e1b300ba8890"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a9860ea5-f67d-4583-bf6e-e10676ef9b21
+      X-Runtime:
+      - '0.176897'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"token":{"access_token":"e73604c37354cced02cecfd8b1ee00dea0f8b2d7f24b4eef78ffaf950088fc82","token_type":"Bearer","expires_in":2592000,"refresh_token":"879b190d0efd6427d87fae9e243344ebce8b81da4d4ad9d2ab51f747e39889af","scope":"basic","created_at":1583727408}}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:16:48 GMT
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/widgets
+    body:
+      encoding: UTF-8
+      string: '{"widget":{"name":"widget-17","description":"Quis vel temporibus occaecati
+        facere corporis quas voluptatem.","kind":"visible"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Authorization:
+      - Bearer e73604c37354cced02cecfd8b1ee00dea0f8b2d7f24b4eef78ffaf950088fc82
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '289'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:16:48 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"e9a875e38fd49387a74ddd402e867fdf"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6f5faf6b-f068-460a-85f4-550997a5a8b9
+      X-Runtime:
+      - '0.023524'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"widget":{"id":1781,"name":"widget-17","description":"Quis
+        vel temporibus occaecati facere corporis quas voluptatem.","kind":"visible","user":{"id":3592,"name":"Celesta
+        Grant","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/592/small/961-200.png?1583727406","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/592/medium/961-200.png?1583727406","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/592/large/961-200.png?1583727406","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/592/original/961-200.png?1583727406"},"first_name":"Celesta","last_name":"Grant","date_of_birth":null,"email":"0b2fa1ab1f38ffd1a8698ffee53c68d1@showoff.ie","active":true},"owner":true}}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:16:49 GMT
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/widgets
+    body:
+      encoding: UTF-8
+      string: '{"widget":{"name":"widget-18","description":"Occaecati vero quaerat
+        voluptatibus sint dicta sit.","kind":"hidden"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Authorization:
+      - Bearer e73604c37354cced02cecfd8b1ee00dea0f8b2d7f24b4eef78ffaf950088fc82
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '277'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:16:49 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"074d39ffe649106f001c750515163a17"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - eb74318b-0001-4049-93de-c0943f7a2fa2
+      X-Runtime:
+      - '0.033847'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"widget":{"id":1782,"name":"widget-18","description":"Occaecati
+        vero quaerat voluptatibus sint dicta sit.","kind":"hidden","user":{"id":3592,"name":"Celesta
+        Grant","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/592/small/961-200.png?1583727406","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/592/medium/961-200.png?1583727406","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/592/large/961-200.png?1583727406","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/592/original/961-200.png?1583727406"},"first_name":"Celesta","last_name":"Grant","date_of_birth":null,"email":"0b2fa1ab1f38ffd1a8698ffee53c68d1@showoff.ie","active":true},"owner":true}}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:16:50 GMT
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/oauth/revoke
+    body:
+      encoding: UTF-8
+      string: '{"token":"e73604c37354cced02cecfd8b1ee00dea0f8b2d7f24b4eef78ffaf950088fc82"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Authorization:
+      - Bearer e73604c37354cced02cecfd8b1ee00dea0f8b2d7f24b4eef78ffaf950088fc82
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '76'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:16:51 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"4da8b3749a9476b19c92f640dc05d63a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 12902f81-ec9d-4b61-8c33-106894583eb1
+      X-Runtime:
+      - '0.018489'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"message":"Token Successfully
+        Revoked"}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:16:51 GMT
+- request:
+    method: get
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/users/3592/widgets
+    body:
+      encoding: UTF-8
+      string: '{"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Authorization:
+      - Bearer e73604c37354cced02cecfd8b1ee00dea0f8b2d7f24b4eef78ffaf950088fc82
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '163'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:16:52 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"4409d41c3c7988f9e7b95681b0edee99"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - da0f238b-bbfe-4ed8-8c6b-e44efc6f25ae
+      X-Runtime:
+      - '0.018919'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"widgets":[{"id":1781,"name":"widget-17","description":"Quis
+        vel temporibus occaecati facere corporis quas voluptatem.","kind":"visible","user":{"id":3592,"name":"Celesta
+        Grant","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/592/small/961-200.png?1583727406","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/592/medium/961-200.png?1583727406","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/592/large/961-200.png?1583727406","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/592/original/961-200.png?1583727406"},"first_name":"Celesta","last_name":"Grant"},"owner":false}]}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:16:53 GMT
+recorded_with: VCR 5.1.0

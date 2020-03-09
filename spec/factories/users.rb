@@ -9,9 +9,9 @@ FactoryBot.define do
     first_name { FFaker::Name.first_name }
     last_name { FFaker::Name.last_name }
     new_record { false }
-
     current_password { password }
     new_password { '123456789' }
+    image_url {  'https://static.thenounproject.com/png/961-200.png' }
 
     transient do
       existent { false }

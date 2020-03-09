@@ -1,16 +1,28 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :set_user
-  before_action :set_token, only: %i[update show_logged_in_user change_password reset_password get_private_widgets]
+  before_action :set_user, :set_tokens
 
   def create
     @user.new_record = true
 
     if @user.save
-      render json: @user.response, status: :ok
+      session[:token] = @user.response.dig('data', 'token', 'access_token')
+      session[:refresh_token] = @user.response.dig('data', 'token', 'refresh_token')
+      session[:user_email] = @user.email
+
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json { render json: @user.response, status: :ok }
+      end
     else
-      render json: @user.errors, status: :conflict
+      respond_to do |format|
+        format.html do
+          flash[:error] = @user.errors['message']
+          redirect_to root_path
+        end
+        format.json { render json: @user.errors, status: :conflict }
+      end
     end
   end
 
@@ -25,21 +37,43 @@ class UsersController < ApplicationController
     end
   end
 
-  def show_logged_in_user
-    if @user.show_logged_in_user
-      render json: @user.response, status: :ok
+  def show_authenticated_user
+    if @user.show_authenticated_user
+      @user.reload
+
+      respond_to do |format|
+        format.html
+        format.json { render json: @user.response, status: :ok }
+      end
     else
-      render json: @user.errors, status: :conflict
+      respond_to do |format|
+        format.html do
+          flash[:error] = @user.errors['message']
+          redirect_to root_path
+        end
+        format.json { render json: @user.errors, status: :conflict }
+      end
     end
   end
 
-  def show_user_id
+  def show_user_by_id
     @user.id = params[:id]
 
-    if @user.show_user_id
-      render json: @user.response, status: :ok
+    if @user.show_user_by_id
+      @user.reload
+
+      respond_to do |format|
+        format.html
+        format.json { render json: @user.response, status: :ok }
+      end
     else
-      render json: @user.errors, status: :conflict
+      respond_to do |format|
+        format.html do
+          flash[:error] = @user.errors['message']
+          redirect_to root_path
+        end
+        format.json { render json: @user.errors, status: :conflict }
+      end
     end
   end
 
@@ -52,10 +86,24 @@ class UsersController < ApplicationController
   end
 
   def reset_password
+    @user.email = session[:user_email]
+
     if @user.reset_password
-      render json: @user.response, status: :ok
+      respond_to do |format|
+        format.html do
+          flash[:notice] = @user.response['message']
+          redirect_back fallback_location: root_path
+        end
+        format.json { render json: @user.response, status: :ok }
+      end
     else
-      render json: @user.errors, status: :conflict
+      respond_to do |format|
+        format.html do
+          flash[:error] = @user.errors['message']
+          redirect_to root_path
+        end
+        format.json { render json: @user.errors, status: :conflict }
+      end
     end
   end
 
@@ -67,24 +115,77 @@ class UsersController < ApplicationController
     end
   end
 
-  def get_private_widgets
-    search_term = params.dig('user', 'widgets', 'search_term')
+  def private_widgets
+    search_term = params[:search_term]
 
-    if @user.get_private_widgets(search_term: search_term)
+    if @user.private_widgets(search_term)
+      respond_to do |format|
+        format.html do
+          @widgets = helpers.prepare_for_collection(@user, Widget)
+        end
+        format.json { render json: @user.response, status: :ok }
+      end
+    else
+      respond_to do |format|
+        format.html do
+          flash[:error] = @user.errors['message']
+          redirect_to root_path
+        end
+        format.json { render json: @user.errors, status: :conflict }
+      end
+    end
+  end
+
+  def widgets_by_user_id
+    @user.id = params[:id]
+    search_term = params[:search_term]
+
+    if @user.widgets_by_user_id(search_term)
       render json: @user.response, status: :ok
     else
       render json: @user.errors, status: :conflict
     end
   end
 
-  def get_widgets_by_user_id
-    @user.id = params[:id]
-    search_term = params.dig('user', 'widgets', 'search_term')
+  def sign_in
+    if @user.authenticate
+      session[:token] = @user.response.dig('data', 'token', 'access_token')
+      session[:refresh_token] = @user.response.dig('data', 'token', 'refresh_token')
+      session[:user_email] = @user.email
 
-    if @user.get_widgets_by_user_id(search_term: search_term)
-      render json: @user.response, status: :ok
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json { render json: @user.response, status: :ok }
+      end
     else
-      render json: @user.errors, status: :conflict
+      reset_session
+
+      respond_to do |format|
+        format.html do
+          flash[:error] = @user.errors['message']
+          redirect_to root_path
+        end
+        format.json { render json: @user.errors, status: :conflict }
+      end
+    end
+  end
+
+  def sign_out
+    reset_session
+
+    if @user.token_revoke
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json { render json: @user.response, status: :ok }
+      end
+    else
+      respond_to do |format|
+        format.html do
+          flash[:error] = @user.errors['message']
+          redirect_to root_path
+        end
+        format.json { render json: @user.errors, status: :conflict }
+      end
     end
   end
 
@@ -93,14 +194,15 @@ class UsersController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = begin
-              User.new(user_params)
-            rescue StandardError
-              User.new
-            end
+      User.new(user_params)
+    rescue StandardError
+      User.new
+    end
   end
 
-  def set_token
+  def set_tokens
     @user.token = session[:token] if @user.token.nil?
+    @user.refresh_token = session[:refresh_token] if @user.refresh_token.nil?
   end
 
   # Only allow a list of trusted parameters through.
@@ -114,6 +216,6 @@ class UsersController < ApplicationController
                                  :date_of_birth,
                                  :image_url,
                                  :token,
-                                 widgets: [:search_term])
+                                 :refresh_token)
   end
 end

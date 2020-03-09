@@ -1,3 +1,6 @@
+[![ruby](https://img.shields.io/badge/ruby-v2.5.1-green.svg)](https://www.ruby-lang.org/en/)
+[![rails](https://img.shields.io/badge/rails-v5.2.3-orange.svg)](https://rubyonrails.org/)
+
 ## Showoff
 
 [https:/showoff-tech-test-1.herokuapp.com](https://showoff-tech-test-1.herokuapp.com)
@@ -30,7 +33,7 @@
 ## Testing with RSpec
 
 The project was built with **TDD (Test Driven Development)** and has a Full Test Suite. To execute the tests just run the tests with RSpec.
-The project also uses **VCR** to record test suite's HTTP interactions.
+The project also uses [VCR](https://github.com/vcr/vcr) to record test suite's HTTP interactions.
 
 1. Run tests
 

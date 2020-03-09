@@ -15,17 +15,15 @@ RSpec.describe AuthsController, type: :controller do
     }
   end
 
-  let(:valid_session) { {} }
-
   describe 'GET #create', :vcr do
     it 'returns a success response' do
-      post :create, params: { auth: valid_attributes }, session: valid_session
+      post :create, params: { auth: valid_attributes }
       expect(response).to be_successful
     end
 
     context 'when wrong password' do
       it 'does not return a success response' do
-        post :create, params: { auth: valid_attributes.merge({password: 'wrong'}) }, session: valid_session
+        post :create, params: { auth: valid_attributes.merge({password: 'wrong'}) }
         expect(response).not_to be_successful
       end
     end
@@ -33,7 +31,7 @@ RSpec.describe AuthsController, type: :controller do
 
   describe 'GET #refresh', :vcr do
     it 'returns a success response' do
-      post :refresh, params: { auth: valid_attributes }, session: valid_session
+      post :refresh, params: { auth: valid_attributes }
       expect(response).to be_successful
     end
 
@@ -41,7 +39,7 @@ RSpec.describe AuthsController, type: :controller do
       before { user.token_revoke }
 
       it 'does not return a success response' do
-        post :refresh, params: { auth: valid_attributes }, session: valid_session
+        post :refresh, params: { auth: valid_attributes }
         expect(response).not_to be_successful
       end
     end
@@ -49,7 +47,7 @@ RSpec.describe AuthsController, type: :controller do
 
   describe 'GET #revoke', :vcr do
     it 'returns a success response' do
-      post :revoke, params: { auth: valid_attributes }, session: valid_session
+      post :revoke, params: { auth: valid_attributes }
       expect(response).to be_successful
     end
 
@@ -57,7 +55,7 @@ RSpec.describe AuthsController, type: :controller do
       before { user.token_revoke }
 
       it 'does not return a success response' do
-        post :revoke, params: { auth: valid_attributes }, session: valid_session
+        post :revoke, params: { auth: valid_attributes }
         expect(response).not_to be_successful
       end
     end

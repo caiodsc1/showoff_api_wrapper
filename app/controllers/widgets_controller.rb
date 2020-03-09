@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
 class WidgetsController < ApplicationController
-  before_action :set_widget
-  before_action :set_user_token
+  before_action :set_widget, :set_user_token
 
-  # GET /widgets
   def index
-    if @widget.get_public_widgets
+    if @widget.public_widgets
       render json: @widget.response, status: :ok
     else
       render json: @widget.errors, status: :conflict
@@ -14,11 +12,21 @@ class WidgetsController < ApplicationController
   end
 
   def visible
-    search_term = params.dig('widget', 'search_term')
-    if @widget.get_visible_widgets(search_term)
-      render json: @widget.response, status: :ok
+    search_term = params[:search_term]
+
+    if @widget.visible_widgets(search_term)
+      respond_to do |format|
+        format.html { @widgets = helpers.prepare_for_collection(@widget) }
+        format.json { render json: @widget.response, status: :ok }
+      end
     else
-      render json: @widget.errors, status: :conflict
+      respond_to do |format|
+        format.html do
+          flash[:error] = @widget.errors['message']
+          redirect_to root_path
+        end
+        format.json { render json: @widget.errors, status: :conflict }
+      end
     end
   end
 
@@ -26,9 +34,18 @@ class WidgetsController < ApplicationController
     @widget.new_record = true
 
     if @widget.save
-      render json: @widget.response, status: :ok
+      respond_to do |format|
+        format.html { redirect_back fallback_location: root_path }
+        format.json { render json: @widget.response, status: :ok }
+      end
     else
-      render json: @widget.errors, status: :conflict
+      respond_to do |format|
+        format.html do
+          flash[:error] = @widget.errors['message']
+          redirect_back fallback_location: root_path
+        end
+        format.json { render json: @widget.errors, status: :conflict }
+      end
     end
   end
 
@@ -69,6 +86,6 @@ class WidgetsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def widget_params
-    params.require(:widget).permit(:id, :name, :description, :kind, :search_term, :user_token) || {}
+    params.require(:widget).permit(:id, :name, :description, :kind, :user_token) || {}
   end
 end

@@ -5,7 +5,7 @@ http_interactions:
     uri: https://showoff-rails-react-production.herokuapp.com/api/v1/users/email
     body:
       encoding: UTF-8
-      string: '{"email":"60a4b232450478fa0b9231b7d61aeead@showoff.ie","client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+      string: '{"email":"873d247e912d3d9df063992863f7bc2f@showoff.ie","client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
     headers:
       Accept:
       - "*/*"
@@ -27,7 +27,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sun, 08 Mar 2020 15:49:07 GMT
+      - Mon, 09 Mar 2020 04:15:23 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -41,13 +41,13 @@ http_interactions:
       Vary:
       - Accept-Encoding, Origin
       Etag:
-      - W/"ac5ceb42b5d862569e0f4cfdaeac6441"
+      - W/"87b29df91b6c54e7b159ac3aeed2a81e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 864bb873-01be-4b4c-9870-38c59b01b40f
+      - 9b193af8-62b0-490b-8b1c-c9fcc2ee33bc
       X-Runtime:
-      - '0.020680'
+      - '0.018742'
       Transfer-Encoding:
       - chunked
       Via:
@@ -56,5 +56,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"code":0,"message":"Success","data":{"available":true}}'
     http_version: null
-  recorded_at: Sun, 08 Mar 2020 15:49:07 GMT
+  recorded_at: Mon, 09 Mar 2020 04:15:24 GMT
 recorded_with: VCR 5.1.0

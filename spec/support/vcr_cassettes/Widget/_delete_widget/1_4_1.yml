@@ -5,7 +5,7 @@ http_interactions:
     uri: https://showoff-rails-react-production.herokuapp.com/api/v1/users
     body:
       encoding: UTF-8
-      string: '{"user":{"email":"8fc81375be85d2cb7d9c43c89000c39f@showoff.ie","password":"12345678","first_name":"Ericka","last_name":"Connelly"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+      string: '{"user":{"email":"475173e4af85f7a98e6e0c1d8185030d@showoff.ie","password":"12345678","first_name":"Kyong","last_name":"Parker","image_url":"https://static.thenounproject.com/png/961-200.png"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
     headers:
       Accept:
       - "*/*"
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '293'
+      - '354'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -27,7 +27,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 07 Mar 2020 08:17:30 GMT
+      - Mon, 09 Mar 2020 04:17:59 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -41,29 +41,29 @@ http_interactions:
       Vary:
       - Accept-Encoding, Origin
       Etag:
-      - W/"adc16b5ad4bf397b7e2aa13b55cd9363"
+      - W/"a15c3d32d2b3a56619e443b14c3f2f6c"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2135d73a-e0c1-49c4-872e-c4e80cca61e3
+      - e2e582cd-e7d4-4c86-a802-c256733711f5
       X-Runtime:
-      - '0.274575'
+      - '0.174049'
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"code":0,"message":"Success","data":{"user":{"id":3417,"name":"Ericka
-        Connelly","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg"},"first_name":"Ericka","last_name":"Connelly","date_of_birth":null,"email":"8fc81375be85d2cb7d9c43c89000c39f@showoff.ie","active":true},"token":{"access_token":"b52a4fa87509a6d48911b5953e8afed9eeb86fd9415c4663c084909f735e27da","token_type":"Bearer","expires_in":2592000,"refresh_token":"3f018a24c8a319a36731ec8ade020a4c7e16c299053545ec4d843c21c2a704df","scope":"basic","created_at":1583569050}}}'
+      string: '{"code":0,"message":"Success","data":{"user":{"id":3605,"name":"Kyong
+        Parker","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg"},"first_name":"Kyong","last_name":"Parker","date_of_birth":null,"email":"475173e4af85f7a98e6e0c1d8185030d@showoff.ie","active":true},"token":{"access_token":"19297710395fae6823f7fb9a1843f2653a380f97a754baf493b571db83e4fe3f","token_type":"Bearer","expires_in":2592000,"refresh_token":"d044b7a858dd8deed3a792a24edc4cbee50ecf02a297136d59146b119d11d633","scope":"basic","created_at":1583727480}}}'
     http_version: null
-  recorded_at: Sat, 07 Mar 2020 08:17:30 GMT
+  recorded_at: Mon, 09 Mar 2020 04:18:00 GMT
 - request:
     method: post
     uri: https://showoff-rails-react-production.herokuapp.com/oauth/token
     body:
       encoding: UTF-8
-      string: '{"grant_type":"password","username":"8fc81375be85d2cb7d9c43c89000c39f@showoff.ie","password":"12345678","client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+      string: '{"grant_type":"password","username":"475173e4af85f7a98e6e0c1d8185030d@showoff.ie","password":"12345678","client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
     headers:
       Accept:
       - "*/*"
@@ -85,7 +85,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 07 Mar 2020 08:17:31 GMT
+      - Mon, 09 Mar 2020 04:18:01 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -99,28 +99,28 @@ http_interactions:
       Vary:
       - Accept-Encoding, Origin
       Etag:
-      - W/"34ebec72835dd23c0c55599470a23b69"
+      - W/"11c1384b12f278816c04b8b6aa1d46e3"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 88185157-96b8-47b1-a1e9-4127b4a95a3f
+      - 3e9ecd5b-0af9-41e6-8047-2b131d72dd80
       X-Runtime:
-      - '0.450082'
+      - '0.174235'
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"code":0,"message":"Success","data":{"token":{"access_token":"2ac2189e0eb7139ecb57c40227d24470fd448e30c55428ee2387fb052390971c","token_type":"Bearer","expires_in":2592000,"refresh_token":"e7888aef19d034d6c1c278405715c203b896bc29365fad60e07fc04f02d668bc","scope":"basic","created_at":1583569052}}}'
+      string: '{"code":0,"message":"Success","data":{"token":{"access_token":"993f29886c9a0564b6083afb0ae3776ff42af4e7f4588013dbfca1969e80acef","token_type":"Bearer","expires_in":2592000,"refresh_token":"51cbf4614e870f5b79bb23106eca120fd03c5e482b409a98ba7c87ffe20beadb","scope":"basic","created_at":1583727482}}}'
     http_version: null
-  recorded_at: Sat, 07 Mar 2020 08:17:32 GMT
+  recorded_at: Mon, 09 Mar 2020 04:18:02 GMT
 - request:
     method: post
     uri: https://showoff-rails-react-production.herokuapp.com/oauth/token
     body:
       encoding: UTF-8
-      string: '{"grant_type":"password","username":"8fc81375be85d2cb7d9c43c89000c39f@showoff.ie","password":"12345678","client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+      string: '{"grant_type":"password","username":"475173e4af85f7a98e6e0c1d8185030d@showoff.ie","password":"12345678","client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
     headers:
       Accept:
       - "*/*"
@@ -142,7 +142,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 07 Mar 2020 08:17:32 GMT
+      - Mon, 09 Mar 2020 04:18:02 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -156,40 +156,40 @@ http_interactions:
       Vary:
       - Accept-Encoding, Origin
       Etag:
-      - W/"d23c1d43ab3cd63b65dcf32974ac86db"
+      - W/"e1c15a891f6245384d5c9e661130f020"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ccf5ad78-5e5f-4635-b670-db68be265198
+      - 95d29e6a-469a-409f-8ded-a8e53bb02c96
       X-Runtime:
-      - '0.296694'
+      - '0.174714'
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"code":0,"message":"Success","data":{"token":{"access_token":"99c0d8a014378d359f24bf650dc047a0d5dd029d527918f190c7b331037955b2","token_type":"Bearer","expires_in":2592000,"refresh_token":"88f375bf8f2b612ea7b9f368945f5723422bcc06f8e46fdc74af3bd638486b8e","scope":"basic","created_at":1583569053}}}'
+      string: '{"code":0,"message":"Success","data":{"token":{"access_token":"7730a62522830950aeec020976b203d44b99bf2550fe30f545dbf6f06c50f8e0","token_type":"Bearer","expires_in":2592000,"refresh_token":"03b6947c0c23797dff952bdd613bde7ad899021bc4bbd25fdf778f4d6e223872","scope":"basic","created_at":1583727483}}}'
     http_version: null
-  recorded_at: Sat, 07 Mar 2020 08:17:33 GMT
+  recorded_at: Mon, 09 Mar 2020 04:18:03 GMT
 - request:
     method: post
     uri: https://showoff-rails-react-production.herokuapp.com/api/v1/widgets
     body:
       encoding: UTF-8
-      string: '{"widget":{"name":"widget-20","description":"Est repudiandae autem
-        delectus aut iure.","kind":"visible"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+      string: '{"widget":{"name":"widget-26","description":"Earum libero aut et molestiae
+        incidunt doloribus aut aliquam.","kind":"hidden"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
     headers:
       Accept:
       - "*/*"
       User-Agent:
       - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
       Authorization:
-      - Bearer 99c0d8a014378d359f24bf650dc047a0d5dd029d527918f190c7b331037955b2
+      - Bearer 7730a62522830950aeec020976b203d44b99bf2550fe30f545dbf6f06c50f8e0
       Content-Type:
       - application/json
       Content-Length:
-      - '267'
+      - '287'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -202,7 +202,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 07 Mar 2020 08:17:34 GMT
+      - Mon, 09 Mar 2020 04:18:04 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -216,27 +216,27 @@ http_interactions:
       Vary:
       - Accept-Encoding, Origin
       Etag:
-      - W/"1e4525a21ece21d9cd63cf9e254885b7"
+      - W/"83a10803b7ab03677305bf4243d8ca42"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9ef391ae-dec5-4ea8-9438-97269f9adf6b
+      - 86b92a1f-5945-4ea4-a76a-2cd40431426b
       X-Runtime:
-      - '0.046143'
+      - '0.024733'
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"code":0,"message":"Success","data":{"widget":{"id":1715,"name":"widget-20","description":"Est
-        repudiandae autem delectus aut iure.","kind":"visible","user":{"id":3417,"name":"Ericka
-        Connelly","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg"},"first_name":"Ericka","last_name":"Connelly","date_of_birth":null,"email":"8fc81375be85d2cb7d9c43c89000c39f@showoff.ie","active":true},"owner":true}}}'
+      string: '{"code":0,"message":"Success","data":{"widget":{"id":1789,"name":"widget-26","description":"Earum
+        libero aut et molestiae incidunt doloribus aut aliquam.","kind":"hidden","user":{"id":3605,"name":"Kyong
+        Parker","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/605/small/961-200.png?1583727480","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/605/medium/961-200.png?1583727480","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/605/large/961-200.png?1583727480","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/605/original/961-200.png?1583727480"},"first_name":"Kyong","last_name":"Parker","date_of_birth":null,"email":"475173e4af85f7a98e6e0c1d8185030d@showoff.ie","active":true},"owner":true}}}'
     http_version: null
-  recorded_at: Sat, 07 Mar 2020 08:17:34 GMT
+  recorded_at: Mon, 09 Mar 2020 04:18:04 GMT
 - request:
     method: delete
-    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/widgets/1715
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/widgets/1789
     body:
       encoding: UTF-8
       string: '{"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
@@ -246,7 +246,7 @@ http_interactions:
       User-Agent:
       - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
       Authorization:
-      - Bearer 99c0d8a014378d359f24bf650dc047a0d5dd029d527918f190c7b331037955b2
+      - Bearer 7730a62522830950aeec020976b203d44b99bf2550fe30f545dbf6f06c50f8e0
       Content-Type:
       - application/json
       Content-Length:
@@ -263,7 +263,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 07 Mar 2020 08:17:35 GMT
+      - Mon, 09 Mar 2020 04:18:05 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -277,13 +277,13 @@ http_interactions:
       Vary:
       - Accept-Encoding, Origin
       Etag:
-      - W/"2b173a9cbbe79bffdb5312080fda6bec"
+      - W/"652da3e6f953123b2d67dd10e3f5d017"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 148dd127-2d24-4795-aefa-e92d7cd757d1
+      - 73156aff-35ea-4d51-95e9-6f0db433b2a9
       X-Runtime:
-      - '0.052861'
+      - '0.032391'
       Transfer-Encoding:
       - chunked
       Via:
@@ -292,5 +292,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"code":0,"message":"Success","data":{"widget":null}}'
     http_version: null
-  recorded_at: Sat, 07 Mar 2020 08:17:35 GMT
+  recorded_at: Mon, 09 Mar 2020 04:18:06 GMT
 recorded_with: VCR 5.1.0

@@ -1,0 +1,20 @@
+<%= form_for :widget, url: widgets_path do |f| %>
+  <div>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control mb-1" %>
+    </div>
+    <div>
+      <%= f.label :description %>
+      <%= f.text_field :description, class: "form-control mb-1" %>
+    </div>
+    <div>
+      <%= f.label :kind %>
+      <%= f.select :kind, [['Hidden', 'hidden'], ['Visible', 'visible']], {}, {class: "form-control mb-1"} %>
+    </div>
+
+    <div class="float-right mt-3">
+      <%= f.submit "Create", class: "btn btn-secondary" %>
+    </div>
+  </div>
+<% end %>

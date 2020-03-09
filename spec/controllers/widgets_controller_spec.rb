@@ -12,31 +12,35 @@ RSpec.describe WidgetsController, type: :controller do
         name: FFaker::Name.unique.name, # random name
         description: widget.description,
         kind: widget.kind,
-        search_term: 'term',
         user_token: user.token
     }
   end
 
-  let(:valid_session) { {} }
-
   describe 'GET #index', :vcr do
     it 'returns a success response' do
-      get :index, params: {widget: valid_attributes}, session: valid_session
+      get :index, params: {widget: valid_attributes}
       expect(response).to be_successful
     end
   end
 
   describe 'GET #visible', :vcr do
     it 'returns a success response' do
-      get :visible, params: {widget: valid_attributes}, session: valid_session
+      get :visible, params: {widget: valid_attributes}
       expect(response).to be_successful
+    end
+
+    context 'when search term is present' do
+      it 'returns a success response' do
+        get :visible, params: {search_term: 'term', widget: valid_attributes}
+        expect(response).to be_successful
+      end
     end
   end
 
   describe 'POST #create', :vcr do
     it 'returns a success response' do
-      post :create, params: {widget: valid_attributes}, session: valid_session
-      expect(response).to be_successful
+      post :create, params: {widget: valid_attributes}
+      expect(response).to have_http_status(:redirect)
     end
   end
 
@@ -49,14 +53,14 @@ RSpec.describe WidgetsController, type: :controller do
     }
 
     it 'returns a success response' do
-      put :update, params: {id: widget.id, widget: valid_attributes.merge(new_attributes)}, session: valid_session
+      put :update, params: {id: widget.id, widget: valid_attributes.merge(new_attributes)}
       expect(response).to be_successful
     end
   end
 
   describe 'DELETE #destroy', :vcr do
     it 'destroys the requested widget' do
-      delete :destroy, params: {id: widget.id, widget: valid_attributes}, session: valid_session
+      delete :destroy, params: {id: widget.id, widget: valid_attributes}
       expect(response).to be_successful
     end
   end

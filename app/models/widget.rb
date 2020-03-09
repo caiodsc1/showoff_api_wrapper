@@ -1,4 +1,4 @@
-class Widget
+class Widget < ApplicationModel
   attr_accessor :id,
                 :name,
                 :description,
@@ -10,11 +10,7 @@ class Widget
   alias token user_token
   alias errors response
 
-  def initialize(*args)
-    args.first&.each do |attr, value|
-      try("#{attr}=", value)
-    end
-  end
+  include UserBelonging
 
   def save
     success, self.response = if new_record
@@ -31,13 +27,13 @@ class Widget
     success
   end
 
-  def get_public_widgets
-    success, self.response = WidgetService.get_public_widgets(self)
+  def public_widgets
+    success, self.response = WidgetService.public_widgets(self)
     success
   end
 
-  def get_visible_widgets(search_term = nil)
-    success, self.response = WidgetService.get_visible_widgets(search_term)
+  def visible_widgets(search_term = nil)
+    success, self.response = WidgetService.visible_widgets(search_term)
     success
   end
 end

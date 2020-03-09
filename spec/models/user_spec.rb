@@ -25,14 +25,16 @@ RSpec.describe User, type: :model do
     it { is_expected.to respond_to(:check_email) }
     it { is_expected.to respond_to(:reset_password) }
     it { is_expected.to respond_to(:change_password) }
-    it { is_expected.to respond_to(:show_logged_in_user) }
-    it { is_expected.to respond_to(:show_user_id) }
-    it { is_expected.to respond_to(:get_private_widgets) }
-    it { is_expected.to respond_to(:get_widgets_by_user_id) }
+    it { is_expected.to respond_to(:show_authenticated_user) }
+    it { is_expected.to respond_to(:show_user_by_id) }
+    it { is_expected.to respond_to(:private_widgets) }
+    it { is_expected.to respond_to(:widgets_by_user_id) }
     it { is_expected.to respond_to(:authenticate) }
     it { is_expected.to respond_to(:token_refresh) }
     it { is_expected.to respond_to(:token_revoke) }
     it { is_expected.to respond_to(:errors) }
+    it { is_expected.to respond_to(:images) }
+    it { is_expected.to respond_to(:reload) }
   end
 
   describe '.save', :vcr do
@@ -129,8 +131,8 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe '.show_logged_in_user', :vcr do
-    subject { user.show_logged_in_user }
+  describe '.show_authenticated_user', :vcr do
+    subject { user.show_authenticated_user }
 
     let(:user) { FactoryBot.build(:user, existent: true) }
 
@@ -149,8 +151,8 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe '.show_user_id', :vcr do
-    subject { user.show_logged_in_user }
+  describe '.show_user_by_id', :vcr do
+    subject { user.show_authenticated_user }
 
     let(:user) { FactoryBot.build(:user, existent: true) }
 
@@ -169,13 +171,13 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe '.get_private_widgets', :vcr do
-    subject { user.get_private_widgets }
+  describe '.private_widgets', :vcr do
+    subject { user.private_widgets }
     let(:user) { FactoryBot.build(:user, existent: true, widgets: 2) }
 
     it { is_expected.to eq true }
     it 'shows two widgets' do
-      user.get_private_widgets
+      user.private_widgets
 
       widgets = user.response.dig('data', 'widgets')
 
@@ -190,8 +192,8 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe '.get_widgets_by_user_id', :vcr do
-    subject { user.get_widgets_by_user_id }
+  describe '.widgets_by_user_id', :vcr do
+    subject { user.widgets_by_user_id }
     let(:user) { FactoryBot.build(:user, existent: true) }
 
     before do
@@ -201,7 +203,7 @@ RSpec.describe User, type: :model do
 
     it { is_expected.to eq true }
     it 'shows two widgets' do
-      user.get_widgets_by_user_id
+      user.widgets_by_user_id
 
       widgets = user.response.dig('data', 'widgets')
 
@@ -214,7 +216,7 @@ RSpec.describe User, type: :model do
 
       it { is_expected.to eq true }
       it 'shows only visible widgets' do
-        user.get_widgets_by_user_id
+        user.widgets_by_user_id
 
         widgets = user.response.dig('data', 'widgets')
 

@@ -1,0 +1,305 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/users
+    body:
+      encoding: UTF-8
+      string: '{"user":{"email":"e47613fda5e1503ee60c4f8d701c0300@showoff.ie","password":"12345678","first_name":"Alayna","last_name":"Botsford","image_url":"https://static.thenounproject.com/png/961-200.png"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '357'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:16:18 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"7bed13a19e77eca0b77f98b01459a980"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6fd0991e-b6d5-4aa5-9e3f-641a4ca63dba
+      X-Runtime:
+      - '0.174963'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"user":{"id":3588,"name":"Alayna
+        Botsford","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg"},"first_name":"Alayna","last_name":"Botsford","date_of_birth":null,"email":"e47613fda5e1503ee60c4f8d701c0300@showoff.ie","active":true},"token":{"access_token":"fc31dae947fa37e4ced52373b1696cef9686fb3b898f69b0d23d94f8dcdb5075","token_type":"Bearer","expires_in":2592000,"refresh_token":"0fbe4f467964e85ceb3b3a2b6e7e9a201990bb8f8390f91183a148c7ccf0a698","scope":"basic","created_at":1583727378}}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:16:18 GMT
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"grant_type":"password","username":"e47613fda5e1503ee60c4f8d701c0300@showoff.ie","password":"12345678","client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '266'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:16:19 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"34368d899289afe5fb97b80f725dd4be"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f0348dbe-20c5-4124-bb69-132bfd04220b
+      X-Runtime:
+      - '0.172798'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"token":{"access_token":"b2ec979a146745543af94d9e74e897619fe26aaea3de91f7c1aeeba18a844e55","token_type":"Bearer","expires_in":2592000,"refresh_token":"c816e02b68a4fd571ef023f8b41ee6ac65d96306d81525c64a47b2e654e8684b","scope":"basic","created_at":1583727379}}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:16:20 GMT
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/widgets
+    body:
+      encoding: UTF-8
+      string: '{"widget":{"name":"widget-9","description":"Ab id optio enim iusto
+        eos.","kind":"hidden"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Authorization:
+      - Bearer b2ec979a146745543af94d9e74e897619fe26aaea3de91f7c1aeeba18a844e55
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '252'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:16:21 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"ec3ccd9dfc91ab5075cede561f284a62"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 71aded31-3c39-4c13-8280-43e38af44ddd
+      X-Runtime:
+      - '0.029438'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"widget":{"id":1773,"name":"widget-9","description":"Ab
+        id optio enim iusto eos.","kind":"hidden","user":{"id":3588,"name":"Alayna
+        Botsford","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/588/small/961-200.png?1583727378","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/588/medium/961-200.png?1583727378","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/588/large/961-200.png?1583727378","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/588/original/961-200.png?1583727378"},"first_name":"Alayna","last_name":"Botsford","date_of_birth":null,"email":"e47613fda5e1503ee60c4f8d701c0300@showoff.ie","active":true},"owner":true}}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:16:21 GMT
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/widgets
+    body:
+      encoding: UTF-8
+      string: '{"widget":{"name":"widget-10","description":"Architecto minima praesentium
+        velit et non doloribus eveniet.","kind":"visible"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Authorization:
+      - Bearer b2ec979a146745543af94d9e74e897619fe26aaea3de91f7c1aeeba18a844e55
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '288'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:16:22 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"8431f82fa73112ed3bdc405f678eb091"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b43e763e-0532-4f8f-bb54-29f9a5e67aa6
+      X-Runtime:
+      - '0.025151'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"widget":{"id":1774,"name":"widget-10","description":"Architecto
+        minima praesentium velit et non doloribus eveniet.","kind":"visible","user":{"id":3588,"name":"Alayna
+        Botsford","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/588/small/961-200.png?1583727378","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/588/medium/961-200.png?1583727378","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/588/large/961-200.png?1583727378","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/588/original/961-200.png?1583727378"},"first_name":"Alayna","last_name":"Botsford","date_of_birth":null,"email":"e47613fda5e1503ee60c4f8d701c0300@showoff.ie","active":true},"owner":true}}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:16:22 GMT
+- request:
+    method: get
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/users/me/widgets
+    body:
+      encoding: UTF-8
+      string: '{"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (mingw32 x86_64) ruby/2.5.1p57
+      Authorization:
+      - Bearer b2ec979a146745543af94d9e74e897619fe26aaea3de91f7c1aeeba18a844e55
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '163'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Mar 2020 04:16:23 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"b96a4f423caa5c5786825915de4db345"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 88a2befa-3017-4362-9a63-0a1df30c619d
+      X-Runtime:
+      - '0.018544'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"Success","data":{"widgets":[{"id":1774,"name":"widget-10","description":"Architecto
+        minima praesentium velit et non doloribus eveniet.","kind":"visible","user":{"id":3588,"name":"Alayna
+        Botsford","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/588/small/961-200.png?1583727378","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/588/medium/961-200.png?1583727378","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/588/large/961-200.png?1583727378","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/588/original/961-200.png?1583727378"},"first_name":"Alayna","last_name":"Botsford","date_of_birth":null,"email":"e47613fda5e1503ee60c4f8d701c0300@showoff.ie","active":true},"owner":true},{"id":1773,"name":"widget-9","description":"Ab
+        id optio enim iusto eos.","kind":"hidden","user":{"id":3588,"name":"Alayna
+        Botsford","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/588/small/961-200.png?1583727378","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/588/medium/961-200.png?1583727378","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/588/large/961-200.png?1583727378","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/588/original/961-200.png?1583727378"},"first_name":"Alayna","last_name":"Botsford","date_of_birth":null,"email":"e47613fda5e1503ee60c4f8d701c0300@showoff.ie","active":true},"owner":true}]}}'
+    http_version: null
+  recorded_at: Mon, 09 Mar 2020 04:16:23 GMT
+recorded_with: VCR 5.1.0

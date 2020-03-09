@@ -17,9 +17,10 @@ RSpec.describe Widget, type: :model do
 
   describe '#methods' do
     it { is_expected.to respond_to(:save) }
-    it { is_expected.to respond_to(:get_public_widgets) }
-    it { is_expected.to respond_to(:get_visible_widgets) }
+    it { is_expected.to respond_to(:public_widgets) }
+    it { is_expected.to respond_to(:visible_widgets) }
     it { is_expected.to respond_to(:errors) }
+    it { is_expected.to respond_to(:user) }
   end
 
   describe '.save', :vcr do
@@ -76,7 +77,7 @@ RSpec.describe Widget, type: :model do
     it 'deletes the widget' do
       widget.delete_widget
 
-      user.get_private_widgets
+      user.private_widgets
 
       user_widgets = user.response.dig('data', 'widgets')
 
@@ -84,8 +85,8 @@ RSpec.describe Widget, type: :model do
     end
   end
 
-  describe '.get_public_widgets', :vcr do
-    subject { widget.get_public_widgets }
+  describe '.public_widgets', :vcr do
+    subject { widget.public_widgets }
 
     let(:widget) { FactoryBot.build(:widget, user_token: user.token, existent: true) }
 
@@ -98,14 +99,14 @@ RSpec.describe Widget, type: :model do
     end
   end
 
-  describe '.get_visible_widgets', :vcr do
-    subject { widget.get_visible_widgets }
+  describe '.visible_widgets', :vcr do
+    subject { widget.visible_widgets }
 
     let(:widget) { FactoryBot.build(:widget, user_token: user.token, existent: true) }
 
     it { is_expected.to eq true }
     it 'shows only visible widgets' do
-      widget.get_visible_widgets
+      widget.visible_widgets
       widgets = widget.response.dig('data', 'widgets')
       kinds = widgets.map { |e| e['kind'] }
 

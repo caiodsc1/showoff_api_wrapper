@@ -3,7 +3,6 @@
 class AuthsController < ApplicationController
   before_action :set_auth
 
-  # POST /auths
   def create
     if @auth.create
       session[:token] = @auth.response.dig('data', 'token', 'access_token')
